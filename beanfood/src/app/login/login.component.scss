@@ -1,0 +1,112 @@
+/* Estilos para o login component */
+.login-container {
+  background-color: #c4c7b6; /* Cor de fundo corrigida */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza os itens verticalmente */
+  height: 80vh; /* Reduz a altura para 80% da altura da tela */
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.left-section {
+  flex: 1;
+  padding: 10px; /* Reduz o padding */
+  text-align: center; /* Centraliza o texto */
+}
+
+.left-section h1 {
+  font-size: 20px; /* Reduz o tamanho do texto */
+  color: #333; /* Cor do texto */
+}
+
+.right-section {
+  width: 400px; /* Reduz a largura do retângulo */
+  height: 300px; /* Remove a altura fixa */
+  max-height: calc(100vh - 50px); /* Define a altura máxima como 80% da altura da tela */
+  overflow-y: auto; /* Adiciona scroll vertical quando o conteúdo exceder a altura máxima */
+  padding: 40px; /* Aumenta o padding */
+  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo branco com transparência */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 15px; /* Aumenta a margem */
+  font-size: 18px; /* Aumenta o tamanho da fonte */
+  text-align: left; /* Alinha o conteúdo para a esquerda */
+}
+
+.right-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px; /* Reduz o tamanho do texto */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: calc(100% - 20px); /* Subtrai 20px para compensar o padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #28a745; /* Cor verde ao focar */
+}
+
+.btn-login {
+  width: calc(100% - 20px); /* Subtrai 20px para compensar o padding */
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove sublinhado do link */
+  display: block;
+  margin-top: 20px; /* Adiciona margem superior */
+}
+
+.btn-login:hover {
+  background-color: #218838;
+}
+
+.btn-cadastro {
+  width: 80%; /* Define a largura menor para o botão de registro */
+  padding: 8px; /* Reduz o padding */
+  font-size: 16px; /* Reduz o tamanho da fonte */
+  background-color: #28a745; /* Mantém a cor de fundo */
+  color: #fff; /* Mantém a cor do texto */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Mantém o raio da borda */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove sublinhado do link */
+  display: block;
+  margin-top: 10px; /* Reduz a margem superior */
+}
+
+.btn-cadastro:hover {
+  background-color: #218838;
+}
+
+.divider {
+  border-left: 2px solid #000; /* Linha vertical preta e mais grossa */
+  height: 347px; /* Altura igual ao retângulo */
+  margin: 0 20px; /* Margem entre o retângulo e a linha */
+}

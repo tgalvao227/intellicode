@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beanfood</title>
+</head>
+<body>
+  <main>
+    <!-- Marmitas ou Dietas -->
+    <section *ngIf="isMarmitas" class="marmitas">
+      <div class="arrow left-arrow" (click)="toggleSection()"><i class="fas fa-chevron-left"></i></div>
+      <div class="container">
+        <h2 class="section-title text-center">{{ sectionTitle }}</h2>
+        <div class="marmitas-container">
+          <!-- Card da Marmita 1 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/carne.jpg" alt="Marmita 1">
+            <h3 class="card-title">Carne com Legumes Assados</h3>
+            <p class="card-price"><strong>R$ 35,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+          <!-- Card da Marmita 2 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/vegetal.jpg" alt="Marmita 2">
+            <h3 class="card-title">Prato Vegetariano com Abobrinha Grelhada</h3>
+            <p class="card-price"><strong>R$ 28,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+          <!-- Card da Marmita 3 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/fruta.jpg" alt="Marmita 3">
+            <h3 class="card-title">Sobremesa de Mirtilo com Morango</h3>
+            <p class="card-price"><strong>R$ 20,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+      <div class="arrow right-arrow" (click)="toggleSection()"><i class="fas fa-chevron-right"></i></div>
+    </section>
+
+    <section *ngIf="!isMarmitas" class="dietas">
+      <div class="arrow left-arrow dietas-arrow" (click)="toggleSection()"><i class="fas fa-chevron-left"></i></div>
+      <div class="container">
+        <h2 class="section-title text-center">{{ sectionTitle }}</h2>
+        <div class="marmitas-container">
+          <!-- Card da Dieta 1 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/vegan.jpg" alt="Dieta Vegana">
+            <h3 class="card-title">Dieta Vegana</h3>
+            <p class="card-price"><strong>R$ 30,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+          <!-- Card da Dieta 2 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/lowcarbb.png" alt="Dieta Lowcarb">
+            <h3 class="card-title">Dieta Lowcarb</h3>
+            <p class="card-price"><strong>R$ 32,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+          <!-- Card da Dieta 3 -->
+          <div class="marmita-card">
+            <img class="marmita-img" src="assets/detox.png" alt="Dieta Detox">
+            <h3 class="card-title">Dieta Detox</h3>
+            <p class="card-price"><strong>R$ 25,00</strong></p>
+            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+      <div class="arrow right-arrow dietas-arrow" (click)="toggleSection()"><i class="fas fa-chevron-right"></i></div>
+    </section>
+
+    <section class="promocoes">
+      <div class="container">
+        <h2 class="section-title text-center">Promoções</h2>
+        <div class="promocoes-container">
+          <!-- Card das promoções -->
+          <div class="promocao-card" *ngFor="let promocao of promocoes">
+            <img class="promocao-img" src="{{ promocao.imagem }}" alt="{{ promocao.nome }}">
+            <h3 class="card-title">{{ promocao.nome }}</h3>
+            <p class="card-price"><strong>{{ promocao.preco }}</strong></p>
+            <div class="quantity-selector">
+              <button class="quantity-btn minus" (click)="decrementQuantity(promocao)">-</button>
+              <span class="quantity-value">{{ promocao.quantidade }}</span>
+              <button class="quantity-btn plus" (click)="incrementQuantity(promocao)">+</button>
+            </div>
+            <button class="btn btn-primary" (click)="addToCart(promocao)"><i class="fas fa-shopping-cart"></i> Comprar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Kits -->
+<section class="kits">
+  <div class="container">
+    <h2 class="section-title">Nossos Kits</h2>
+    <div class="kits-container">
+      <!-- Card Mensal -->
+      <div class="kit-card">
+        <img src="imagem-mensal.jpg" alt="Kit Mensal">
+        <h3 class="card-title">Kit Mensal</h3>
+        <p class="card-description">Receba nosso kit toda semana em sua casa por 1 mês.</p>
+        <p class="card-price">$X/mês</p>
+        <button class="btn btn-primary">Assine agora</button>
+      </div>
+      <!-- Card Trimestral -->
+      <div class="kit-card">
+        <img src="imagem-trimestral.jpg" alt="Kit Trimestral">
+        <h3 class="card-title">Kit Trimestral</h3>
+        <p class="card-description">Receba nosso kit toda semana em sua casa por 3 meses.</p>
+        <p class="card-price">$X/trimestre</p>
+        <button class="btn btn-primary">Assine agora</button>
+      </div>
+      <!-- Card Semestral -->
+      <div class="kit-card">
+        <img src="imagem-semestral.jpg" alt="Kit Semestral">
+        <h3 class="card-title">Kit Semestral</h3>
+        <p class="card-description">Receba nosso kit toda semana em sua casa por 6 meses.</p>
+        <p class="card-price">$X/semestre</p>
+        <button class="btn btn-primary">Assine agora</button>
+      </div>
+      <!-- Card Anual -->
+      <div class="kit-card">
+        <img src="imagem-anual.jpg" alt="Kit Anual">
+        <h3 class="card-title">Kit Anual</h3>
+        <p class="card-description">Receba nosso kit toda semana em sua casa por 1 ano.</p>
+        <p class="card-price">$X/ano</p>
+        <button class="btn btn-primary">Assine agora</button>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    <!-- Seção de Depoimentos -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>Depoimentos dos nossos clientes</h2>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"As marmitas da BeanFood são deliciosas e me ajudam a manter uma alimentação saudável mesmo nos dias
+              corridos."</p>
+          </div>
+          <div class="testimonial-author">
+            <p>- Maria Souza</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"Adoro as opções de dietas da BeanFood! Elas são práticas, saborosas e me ajudaram a perder peso de forma
+              saudável."</p>
+          </div>
+          <div class="testimonial-author">
+            <p>- Pedro Santos</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"A BeanFood mudou minha vida! Com suas refeições saudáveis e práticas, consegui adotar hábitos
+              alimentares mais equilibrados."</p>
+          </div>
+          <div class="testimonial-author">
+            <p>- Ana Oliveira</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

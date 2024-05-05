@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece5df; /* Fundo do site */
+}
+
+/* Banner */
+.banner {
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  background-color: #859b48; /* Cor dos botões */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.banner button:hover {
+  background-color: #6c7f39; /* Cor dos botões ao passar o mouse */
+}
+
+.btn-login {
+  margin-left: 5px; /* Ajuste conforme necessário */
+  background-color: #859b48; /* Cor do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remova a borda */
+  padding: 5px 10px; /* Ajuste o preenchimento conforme necessário */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+}
+
+.btn-login:hover {
+  background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
+}
+
+.section-intro {
+  text-align: center; /* Centralizar o texto */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  font-size: 24px; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+}
+
+.dietas {
+  background-color: #c4c7b6; /* Fundo do carrossel das dietas */
+  padding: 50px 0;
+  overflow: hidden; /* Esconde o overflow horizontal */
+  position: relative; /* Para posicionar as setas corretamente */
+}
+
+
+/* Setas para Dietas */
+.dietas .left-arrow {
+  position: absolute; /* Para posicionar absolutamente as setas */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para o centro vertical */
+  left: 10px; /* Posiciona à esquerda */
+  width: 30px; /* Largura da seta */
+  height: 30px; /* Altura da seta */
+  background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo das setas */
+  border-radius: 50%; /* Para tornar as setas redondas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Mostra que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.dietas .right-arrow {
+  position: absolute; /* Para posicionar absolutamente as setas */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para o centro vertical */
+  right: 10px; /* Posiciona à direita */
+  width: 30px; /* Largura da seta */
+  height: 30px; /* Altura da seta */
+  background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo das setas */
+  border-radius: 50%; /* Para tornar as setas redondas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Mostra que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Marmitas */
+.marmitas {
+  background-color: #c4c7b6; /* Fundo do carrossel das marmitas */
+  padding: 50px 0;
+  overflow: hidden; /* Esconde o overflow horizontal */
+  position: relative; /* Para posicionar as setas corretamente */
+}
+
+.marmitas .arrow {
+  position: absolute; /* Para posicionar absolutamente as setas */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para o centro vertical */
+  width: 30px; /* Largura da seta */
+  height: 30px; /* Altura da seta */
+  background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo das setas */
+  border-radius: 50%; /* Para tornar as setas redondas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Mostra que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.marmitas .arrow i {
+  color: #333; /* Cor do ícone */
+  font-size: 20px; /* Tamanho do ícone */
+}
+
+.marmitas .arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Mais claro ao passar o mouse */
+}
+
+.marmitas .left-arrow {
+  left: 10px; /* Posiciona à esquerda */
+}
+
+.marmitas .right-arrow {
+  right: 10px; /* Posiciona à direita */
+}
+
+.container {
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+.section-title {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center; /* Centraliza o texto */
+}
+
+.marmitas-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-left: 0; /* Remova a margem à esquerda */
+}
+
+.marmita-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; /* Reduz o espaço entre os cards */
+  width: 300px;
+  text-align: center;
+}
+
+.marmita-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #859b48;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6c7f39;
+}
+
+
+/* Estilos para a Seção de Depoimentos */
+.testimonials {
+  background-color: #ece5df; /* Cor de fundo */
+  padding: 50px 0; /* Espaçamento interno */
+  text-align: center; /* Centralizar o conteúdo */
+}
+
+.testimonials h2 {
+  color: #333; /* Cor do título */
+  font-size: 24px; /* Tamanho do título */
+  margin-bottom: 30px; /* Espaçamento inferior */
+}
+
+.testimonial {
+  background-color: #c4c7b6;
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-bottom: 20px; /* Espaçamento inferior entre os depoimentos */
+}
+
+.testimonial-content {
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.testimonial-author {
+  font-style: italic; /* Texto em itálico */
+}
+
+.promocoes {
+  padding: 50px 0; /* Espaçamento interno */
+  overflow: hidden; /* Esconde o overflow horizontal */
+  position: relative; /* Para posicionar as setas corretamente */
+}
+
+.promocoes .container {
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+.promocoes .section-title {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center; /* Centraliza o texto */
+}
+
+.promocoes-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-left: 0; /* Remova a margem à esquerda */
+  flex-wrap: wrap; /* Garante que os cards vão para a próxima linha se necessário */
+}
+
+.promocao-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+  width: calc(33.33% - 20px); /* Calcula a largura dos cards, com 20px de espaço entre eles */
+  text-align: center;
+  
+}
+
+.promocao-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* Remova os cantos brancos */
+  margin-bottom: 10px;
+}
+
+.promocao-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicione uma sombra sutil ao passar o mouse */
+}
+
+.promocao-card .btn-primary {
+  margin-top: 20px; /* Ajuste conforme necessário para aumentar a distância */
+}
+
+/* Estilo para os botões de quantidade */
+.quantity-selector .quantity-btn {
+  background-color: #859b48; /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 6px 10px; /* Ajuste o padding para diminuir o tamanho */
+  font-size: 14px; /* Ajuste o tamanho da fonte para acompanhar o tamanho dos botões */
+  cursor: pointer;
+}
+
+.quantity-selector .quantity-btn:hover {
+  background-color: #6e803b; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Estilos para a Seção de Kits */
+.kits {
+  padding: 50px 0; /* Espaçamento interno */
+  background-color: #ece5df; /* Cor de fundo */
+}
+
+.kits .container {
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+.kits .section-title {
+  color: #333; /* Cor do título */
+  font-size: 24px; /* Tamanho do título */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  text-align: center; /* Centraliza o texto */
+}
+
+.kits-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-left: 0; /* Remova a margem à esquerda */
+  flex-wrap: wrap; /* Garante que os cards vão para a próxima linha se necessário */
+}
+
+.kit-card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+  width: calc(25% - 20px); /* Calcula a largura dos cards, com 20px de espaço entre eles */
+  text-align: center;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.kit-card:hover {
+  transform: translateY(-5px); /* Efeito de levantar o card ao passar o mouse */
+}
+
+.kit-card img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* Remova os cantos brancos */
+}
+
+.kit-card .card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.kit-card .card-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.kit-card .card-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.kit-card .btn-primary {
+  background-color: #859b48; /* Cor do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remova a borda */
+  padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
+  font-size: 16px; /* Tamanho do texto */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.kit-card .btn-primary:hover {
+  background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
