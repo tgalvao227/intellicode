@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beanfood</title>
-</head>
-<body>
-  <main>
+<div>
     <!-- Marmitas ou Dietas -->
     <section *ngIf="isMarmitas" class="marmitas">
       <div class="arrow left-arrow" (click)="toggleSection()"><i class="fas fa-chevron-left"></i></div>
@@ -19,7 +11,7 @@
             <img class="marmita-img" src="assets/carne.jpg" alt="Marmita 1">
             <h3 class="card-title">Carne com Legumes Assados</h3>
             <p class="card-price"><strong>R$ 35,00</strong></p>
-            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Comprar</button>
+            <button class="btn btn-primary" [routerLink]="['/compra']"><i class="fas fa-shopping-cart"></i> Comprar</button>
           </div>
           <!-- Card da Marmita 2 -->
           <div class="marmita-card">
@@ -165,6 +157,6 @@
         </div>
       </div>
     </section>
-  </main>
-</body>
-</html>
+</div>
+<app-footer></app-footer>
+
