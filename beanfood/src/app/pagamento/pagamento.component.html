@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="payment-form">
+    <h2>Detalhes do Pagamento</h2>
+
+    <!-- Opções de pagamento -->
+    <div class="form-group">
+      <label for="payment-method">Método de Pagamento:</label>
+      <select id="payment-method">
+        <option value="card">Cartão de Crédito</option>
+        <option value="boleto">Boleto Bancário</option>
+        <option value="pix">Pix</option>
+        <option value="vr_va">Vale Refeição / Vale Alimentação (VR/VA)</option>
+      </select>
+    </div>
+
+    <!-- Campos específicos para cartão de crédito -->
+    <div class="form-group" *ngIf="formaPagamento === 'card'">
+      <label for="card-number">Número do Cartão:</label>
+      <input type="text" id="card-number">
+    </div>
+    <div class="form-group" *ngIf="formaPagamento === 'card'">
+      <label for="expiry-date">Data de Validade:</label>
+      <input type="text" id="expiry-date">
+    </div>
+    <div class="form-group" *ngIf="formaPagamento === 'card'">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv">
+    </div>
+    <div class="form-group" *ngIf="formaPagamento === 'card'">
+      <label for="name-on-card">Nome no Cartão:</label>
+      <input type="text" id="name-on-card">
+    </div>
+
+    <!-- Campos específicos para VR/VA -->
+    <div class="form-group" *ngIf="formaPagamento === 'vr_va'">
+      <label for="vr-va-number">Número do Vale:</label>
+      <input type="text" id="vr-va-number">
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="action-buttons">
+      <button class="btn-primary">Pagar</button>
+      <button class="btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

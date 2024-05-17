@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d4e157; /* Fundo do site em verde */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color:  #c4c7b6 /* Fundo verde */
+}
+
+.purchase-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: #fff; /* Cor de fundo do formulário */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.purchase-form h2 {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.purchase-form p {
+  margin-bottom: 15px;
+  color: #666666;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.form-group p {
+  margin: 5px 0;
+  color: #666666;
+}
+
+.primary-button, .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #859b48; /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover, .btn-primary:hover {
+  background-color: #6c7f39; /* Verde mais escuro */
+}
+
+.secondary-button, .btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6c757d; /* Cinza */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover, .btn-secondary:hover {
+  background-color: #5a6268; /* Cinza mais escuro */
+}
+
+.resumo-pedido {
+  margin-top: 30px;
+}
+
+.resumo-pedido h2 {
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.resumo-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+.resumo-item.total {
+  font-weight: bold;
+  color: #333333;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #859b48; /* Verde */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6c7f39; /* Verde mais escuro */
+}

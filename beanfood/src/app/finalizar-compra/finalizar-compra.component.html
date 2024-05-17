@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="purchase-form">
+    <h2>Finalizar Compra</h2>
+    <p>Campos com * são obrigatórios.</p>
+
+    <!-- Endereço de entrega -->
+    <div class="form-group">
+      <label for="endereco-entrega">Endereço de entrega *</label>
+      <p>Rua Tuia-do-Oriente, 13 - Vila Nova Parada, São Paulo - SP</p>
+      <!-- Botão para escolher outro endereço -->
+      <button class="btn btn-secondary" (click)="mostrarCampoNovoEndereco()">Escolher outro endereço</button>
+    </div>
+
+    <!-- Novo endereço de entrega (mostrado apenas se o usuário escolher outro endereço) -->
+    <div *ngIf="mostrarNovoEndereco" class="form-group">
+      <label for="novo-endereco-entrega">Novo Endereço de entrega *</label>
+      <input type="text" id="novo-endereco-entrega" [formControl]="enderecoEntregaFormControl">
+      <button class="btn btn-primary" (click)="onSubmitNovoEndereco()">Salvar Novo Endereço</button>
+    </div>
+
+    <!-- Resumo do pedido -->
+    <div class="resumo-pedido">
+      <h2>Resumo do Pedido</h2>
+      <div class="resumo-item">
+        <span>Valor dos produtos:</span>
+        <span>R$ 35,00</span>
+      </div>
+      <div class="resumo-item">
+        <span>Frete:</span>
+        <span>+ R$ 7,00</span>
+      </div>
+      <div class="resumo-item total">
+        <span>Total:</span>
+        <span>R$ 42,00</span>
+      </div>
+    </div>
+
+    <!-- Botão de Finalizar Compra -->
+    <div class="action-buttons">
+      <button class="btn btn-primary" type="submit">Finalizar Compra</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
