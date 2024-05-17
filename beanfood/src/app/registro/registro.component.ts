@@ -3,13 +3,14 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-registro',
     standalone: true,
     templateUrl: './registro.component.html',
     styleUrls: ['./registro.component.scss'],
-    imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule]
+    imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule, RouterLink]
 })
 export class RegistroComponent {
   testeForm: FormGroup;
