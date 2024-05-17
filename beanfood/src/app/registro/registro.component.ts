@@ -1,17 +1,41 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
-import { HomeComponent } from '../home/home.component';
+import { Component, NgModule } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // Importando o CommonModule
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
-  selector: 'app-registro',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HomeComponent, RegistroComponent, HeaderComponent, FooterComponent],
-  templateUrl: './registro.component.html',
-  styleUrl: './registro.component.scss'
+    selector: 'app-registro',
+    standalone: true,
+    templateUrl: './registro.component.html',
+    styleUrls: ['./registro.component.scss'],
+    imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule]
 })
 export class RegistroComponent {
+  testeForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {
+    this.testeForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      profile: ['Pessoa Física', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      cpf: ['', [Validators.required, Validators.pattern(/\d{3}\.\d{3}\.\d{3}-\d{2}/)]],
+      gender: ['', Validators.required],
+      birthdate: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern(/\(\d{2}\) \d{4,5}-\d{4}/)]],
+      cep: ['', [Validators.required, Validators.pattern(/\d{5}-\d{3}/)]],
+      newsletter: [false],
+      privacyPolicy: [false, Validators.requiredTrue]
+    })
+  }
+
+  onSubmit() {
+    if (this.testeForm.valid) {
+      console.log('Form Submitted', this.testeForm.value);
+    } else {
+      console.log('Form is not valid');
+    }
+  }
 }

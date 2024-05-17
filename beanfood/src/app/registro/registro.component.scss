@@ -4,62 +4,73 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #c4c7b6; /* Cor de fundo para ocupar toda a página */
+  background-color: #f8f8f1;
 }
 
 .container {
-  margin: 20px; /* Adiciona margem ao redor do formulário */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; 
 }
 
 .registration-form {
-  width: 95%; /* Define a largura do formulário */
-  max-width: 600px; /* Define a largura máxima do formulário */
-  margin: 20px auto; /* Centraliza o formulário verticalmente e adiciona margem nas laterais */
-  padding: 20px;
-  background-color: #fff; /* Cor de fundo do formulário */
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .registration-form h1 {
   text-align: center;
-  color: #6c7f39; /* Cor do título */
-  margin-bottom: 10px; /* Diminui a margem inferior do título */
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.registration-form h2 {
+  margin-top: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.registration-form p {
+  color: #ff6b6b;
 }
 
 .form-group {
-  margin-bottom: 10px; /* Diminui a margem inferior dos grupos de formulário */
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
-  color: #6c7f39; /* Cor do texto */
+  color: #333;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .form-group input,
-.form-group select,
-.form-group textarea {
-  width: calc(100% - 20px); /* Ajuste a largura para levar em conta o padding */
+.form-group select {
+  width: calc(100% - 20px);
   padding: 10px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f5f5f5; /* Cor do fundo dos campos */
+  background-color: #f5f5f5;
 }
 
 .form-group input[type="checkbox"] {
+  width: auto;
   margin-right: 5px;
 }
 
-.form-group .checkbox-group {
-  margin-left: 1px; /* Adiciona margem à esquerda para os botões de rádio */
+.button-group {
+  text-align: center;
 }
 
-.form-group button[type="submit"] {
-  width: calc(100% - 20px); /* Ajuste a largura para levar em conta o padding */
-  padding: 10px;
-  background-color: #859b48; /* Cor do botão */
+.button-group button {
+  padding: 10px 20px;
+  background-color: #48a999;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -67,64 +78,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.form-group button[type="submit"]:hover {
-  background-color: #6c7f39; /* Cor mais escura ao passar o mouse */
-}
-
-/* Estilos para o dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: #f5f5f5;
-  color: #6c7f39;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.dropdown-content li {
-  display: block;
-}
-
-.dropdown-content input[type="radio"] {
-  display: none;
-}
-
-.dropdown-content label {
-  color: #6c7f39;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-}
-
-.dropdown-content label:hover {
-  background-color: #f5f5f5;
-}
-
-.toggle-input:checked ~ .dropdown-content {
-  display: block;
-}
-
-.dropbtn::after {
-  content: '\25BC'; /* ▼ */
-  font-size: 0.6em;
-  margin-left: 5px;
+.button-group button:hover {
+  background-color: #3a8277;
 }
