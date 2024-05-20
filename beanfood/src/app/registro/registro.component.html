@@ -4,7 +4,7 @@
   <div class="registration-form">
     <h1>Crie sua conta</h1>
     <p>* Campos obrigatórios.</p>
-    <form [formGroup]="testeForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Seu e-mail *</label>
         <input type="email" id="email" formControlName="email" required>
@@ -14,7 +14,7 @@
       <div class="form-group">
         <label for="password">Sua senha *</label>
         <input type="password" id="password" formControlName="password" required>
-        <p *ngIf="testeForm.get('password')?.hasError('minlength') && testeForm.get('password')?.touched" class="text-danger">
+        <p *ngIf="registroForm.get('password')?.hasError('minlength') && registroForm.get('password')?.touched" class="text-danger">
           A senha deve ter pelo menos 8 caracteres.
         </p>
         <p>Use oito ou mais caracteres com uma combinação de letras, números e símbolos para uma senha mais segura.</p>

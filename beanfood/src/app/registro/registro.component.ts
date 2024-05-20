@@ -1,22 +1,25 @@
-import { Component, NgModule } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
-import { RouterLink } from '@angular/router';
+// import { RegistroService } from './registro.service';
 
 @Component({
-    selector: 'app-registro',
-    standalone: true,
-    templateUrl: './registro.component.html',
-    styleUrls: ['./registro.component.scss'],
-    imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule, RouterLink]
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  standalone: true,
+  imports: [HeaderComponent, FooterComponent, CommonModule, ReactiveFormsModule],
+  styleUrls: ['./registro.component.scss']
 })
-export class RegistroComponent {
-  testeForm: FormGroup;
+export class RegistroComponent implements OnInit {
+  registroForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.testeForm = this.fb.group({
+  constructor(private fb: FormBuilder, private http: HttpClient, ) {} //INSERIR O PRIVATE DO SERVICE
+
+  ngOnInit(): void {
+    this.registroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       profile: ['Pessoa Física', Validators.required],
@@ -29,14 +32,25 @@ export class RegistroComponent {
       cep: ['', [Validators.required, Validators.pattern(/\d{5}-\d{3}/)]],
       newsletter: [false],
       privacyPolicy: [false, Validators.requiredTrue]
-    })
+    });
   }
 
   onSubmit() {
-    if (this.testeForm.valid) {
-      console.log('Form Submitted', this.testeForm.value);
-    } else {
-      console.log('Form is not valid');
-    }
+  //   if (this.registroForm.valid) {
+  //     const userData = this.registroForm.value;
+
+  //     this.registroService.registrarUsuario(userData).subscribe(
+  //       response => {
+  //         console.log('Usuário registrado com sucesso:', response);
+          
+  //       },
+  //       error => {
+  //         console.error('Erro ao registrar usuário:', error);
+         
+  //       }
+  //     );
+  //   } else {
+  //     console.log('Formulário inválido. Verifique os campos.');
+  //   }
   }
 }
