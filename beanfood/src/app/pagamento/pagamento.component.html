@@ -7,12 +7,12 @@
     <!-- Opções de pagamento -->
     <div class="form-group">
       <label for="payment-method">Método de Pagamento:</label>
-      <select id="payment-method">
+      <!-- <select id="payment-method" (change)="onPaymentMethodChange($event.target?.value)"> DEPOIS VOU DESCOMENTAR --> 
         <option value="card">Cartão de Crédito</option>
         <option value="boleto">Boleto Bancário</option>
         <option value="pix">Pix</option>
         <option value="vr_va">Vale Refeição / Vale Alimentação (VR/VA)</option>
-      </select>
+      <!-- </select> -->
     </div>
 
     <!-- Campos específicos para cartão de crédito -->
@@ -41,7 +41,7 @@
 
     <!-- Botões de ação -->
     <div class="action-buttons">
-      <button class="btn-primary">Pagar</button>
+      <button class="btn-primary" (click)="realizarPagamento()">Pagar</button>
       <button class="btn-secondary">Cancelar</button>
     </div>
   </div>
