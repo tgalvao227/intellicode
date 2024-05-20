@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<div class="container">
+    <h2 class="section-title">Monte seu Prato</h2>
+    <h4 class="sub-title">Não encontrou aquilo queria? Não se preocupe, aqui você pode montar seu prato personalizado!</h4>
+  
+    <!-- Proteína -->
+    <div class="categoria">
+      <h3>Proteína</h3>
+      <p>Escolha de 1 a 1 opção</p>
+      <p>Escolha a proteína</p>
+      <div *ngFor="let item of proteinas" class="opcao">
+        <input type="radio" [id]="item.nome" name="proteina" (change)="selecionarProteina(item)">
+        <label [for]="item.nome">
+          <div class="item-container">
+            <div class="item-info">
+              <img src="path_to_image_placeholder" alt="Imagem da proteína" class="item-image">
+              <div class="item-text">
+                <span>{{ item.nome }} 100g</span>
+                <span class="item-preco">+ R$ {{ item.preco.toFixed(2).replace('.', ',') }}</span>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  
+    <!-- Acompanhamentos -->
+    <div class="categoria">
+      <h3>Acompanhamento</h3>
+      <p>Escolha de 1 a 2 opções</p>
+      <p>Escolha até 02 acompanhamentos</p>
+      <div *ngFor="let item of acompanhamentos" class="opcao">
+        <input type="checkbox" [id]="item.nome" [disabled]="(pedido.acompanhamentos.length >= 2 && !itemSelecionado(item))" (change)="selecionarAcompanhamento(item)">
+        <label [for]="item.nome">
+          <div class="item-container">
+            <div class="item-info">
+              <img src="path_to_image_placeholder" alt="Imagem do acompanhamento" class="item-image">
+              <div class="item-text">
+                <span>{{ item.nome }} 100g</span>
+                <span class="item-preco">+ R$ {{ item.preco.toFixed(2).replace('.', ',') }}</span>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  
+    <!-- Observações -->
+    <div class="categoria">
+      <h3>Alguma observação?</h3>
+      <textarea [(ngModel)]="observacao" placeholder="Digite aqui suas observações..."></textarea>
+    </div>
+  
+    <!-- Resumo do Pedido -->
+    <div class="resumo">
+      <h3>Resumo do Pedido</h3>
+      <p><strong>Proteína:</strong> {{ pedido.proteina?.nome }}</p>
+      <p><strong>Acompanhamentos:</strong></p>
+      <ul>
+        <li *ngFor="let item of pedido.acompanhamentos">{{ item.nome }}</li>
+      </ul>
+      <p><strong>Observações:</strong> {{ observacao }}</p>
+      <p><strong>Total:</strong> R$ {{ calcularTotal().toFixed(2).replace('.', ',') }}</p>
+    </div>
+  
+    <button class="btn-primary" (click)="finalizarPedido()">Finalizar Pedido</button>
+  </div>
+
+<app-footer></app-footer>

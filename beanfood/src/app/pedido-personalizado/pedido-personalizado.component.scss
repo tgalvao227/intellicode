@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ece5df; /* Fundo do site */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+  }
+  
+  .section-title {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sub-title {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Categorias */
+  .categoria {
+    background-color: #c4c7b6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .categoria h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .categoria p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .opcao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .opcao input[type="radio"],
+  .opcao input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .item-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item-preco {
+    font-size: 16px;
+    color: #859b48;
+  }
+  
+  /* Observações */
+  .categoria textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Resumo do Pedido */
+  .resumo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resumo p {
+    margin-bottom: 10px;
+  }
+  
+  .resumo ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: #859b48;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .btn-primary:hover {
+    background-color: #6c7f39;
+  }
