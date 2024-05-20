@@ -1,37 +1,40 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { RegistroComponent } from '../registro/registro.component';
-import { HomeComponent } from '../home/home.component';
-import { MatCard } from '@angular/material/card';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
+import { FormBuilder, FormGroup } from '@angular/forms';
+// import { LoginService } from './login.service';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-    selector: 'app-login',
-    standalone: true,
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss',
-    imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HomeComponent, RegistroComponent, HeaderComponent, FooterComponent, ReactiveFormsModule]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  standalone: true,
+  imports: [HeaderComponent, FooterComponent],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-    loginForm: FormGroup;
+  loginForm: FormGroup;
 
-    constructor(private fb: FormBuilder) {
-      this.loginForm = this.fb.group({
-        email: [''],
-        password: [''],
-      })
-    }
-  
-    onSubmit() {
-      if (this.loginForm.valid) {
-        console.log('Form Submitted', this.loginForm.value);
-      } else {
-        console.log('Form is not valid');
-      }
-    }
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
   }
-  
 
+  onSubmit() {
+    // if (this.loginForm.valid) {
+    //   const credentials = this.loginForm.value;
+
+    //   this.loginService.login(credentials).subscribe(
+    //     response => {
+    //       console.log('Login bem-sucedido:', response);
+    //     },
+    //     error => {
+    //       console.error('Erro no login:', error);
+    //     }
+    //   );
+    // } else {
+    //   console.log('Formulário inválido. Verifique os campos.');
+    // }
+  }
+}
