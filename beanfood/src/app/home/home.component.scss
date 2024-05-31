@@ -392,6 +392,137 @@ body {
   background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece5df; /* Fundo do site */
+}
+
+/* Header */
+header {
+  background-color: #ece5df;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-icon img,
+.cart img {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.user-icon {
+  margin-right: 5px; // Reduzindo o espaço entre o ícone do usuário e o carrinho
+}
+
+
+.cart {
+  display: flex; /* Adiciona display flex para alinhar os elementos internamente */
+  align-items: center; /* Alinha os itens verticalmente */
+  position: relative; /* Define a posição relativa para o elemento pai */
+}
+
+.btn-login {
+  margin-left: 5px; /* Ajuste conforme necessário */
+  padding: 0; /* Remova o preenchimento do botão */
+  background: transparent; /* Remova o fundo do botão */
+  border: none; /* Remova a borda */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  display: flex; /* Para alinhar a imagem dentro do botão */
+
+  img {
+    width: 30px; /* Defina a largura da imagem conforme necessário */
+    height: 30px; /* Defina a altura da imagem conforme necessário */
+    border: none; /* Remova a borda da imagem */
+    outline: none; /* Remova a borda de foco da imagem */
+  }
+}
+
+
+
+/* Banner */
+.banner {
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  background-color: #859b48; /* Cor dos botões */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.banner button:hover {
+  background-color: #6c7f39; /* Cor dos botões ao passar o mouse */
+}
+
+.btn-login {
+  margin-left: 5px; /* Ajuste conforme necessário */
+  background-color: #859b48; /* Cor do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remova a borda */
+  padding: 5px 10px; /* Ajuste o preenchimento conforme necessário */
+  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+}
+
+.btn-login:hover {
+  background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
+}
+
+.section-intro {
+  text-align: center; /* Centralizar o texto */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  font-size: 24px; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
+}
+
 
 
 
