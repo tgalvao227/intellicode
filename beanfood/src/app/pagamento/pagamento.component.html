@@ -1,48 +1,81 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="container montserrat-regular">
   <div class="payment-form">
-    <h2>Detalhes do Pagamento</h2>
+    <h2>Selecione qual é a melhor forma de pagamento para você.</h2>
 
-    <!-- Opções de pagamento -->
-    <div class="form-group">
-      <label for="payment-method">Método de Pagamento:</label>
-      <!-- <select id="payment-method" (change)="onPaymentMethodChange($event.target?.value)"> DEPOIS VOU DESCOMENTAR --> 
-        <option value="card">Cartão de Crédito</option>
-        <option value="boleto">Boleto Bancário</option>
-        <option value="pix">Pix</option>
-        <option value="vr_va">Vale Refeição / Vale Alimentação (VR/VA)</option>
-      <!-- </select> -->
-    </div>
-
-    <!-- Campos específicos para cartão de crédito -->
-    <div class="form-group" *ngIf="formaPagamento === 'card'">
-      <label for="card-number">Número do Cartão:</label>
-      <input type="text" id="card-number">
-    </div>
-    <div class="form-group" *ngIf="formaPagamento === 'card'">
-      <label for="expiry-date">Data de Validade:</label>
-      <input type="text" id="expiry-date">
-    </div>
-    <div class="form-group" *ngIf="formaPagamento === 'card'">
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv">
-    </div>
-    <div class="form-group" *ngIf="formaPagamento === 'card'">
-      <label for="name-on-card">Nome no Cartão:</label>
-      <input type="text" id="name-on-card">
+    <div class="form-group payment-options montserrat-regular">
+      <div class="option" (click)="onPaymentMethodChange('card')">
+        <input type="radio" id="credito" name="payment" value="card" [(ngModel)]="formaPagamento" checked>
+        <label for="credito">Cartão de crédito</label>
+        <p>Elo, Visa, American Express, Diners Club, Mastercard</p>
+      </div>
+      <div class="option" (click)="onPaymentMethodChange('boleto')">
+        <input type="radio" id="boleto" name="payment" value="boleto" [(ngModel)]="formaPagamento">
+        <label for="boleto">Boleto Bancário</label>
+      </div>
+      <div class="option" (click)="onPaymentMethodChange('pix')">
+        <input type="radio" id="pix" name="payment" value="pix" [(ngModel)]="formaPagamento">
+        <label for="pix">Chave PIX</label>
+        <p>Banco Ficção Chave | E-mail: 'emailquenaoexiste</p>
+        <p class="discount">Desconto de 3.00%</p>
+      </div>
+      <div class="option" (click)="onPaymentMethodChange('vr_va')">
+        <input type="radio" id="vr_va" name="payment" value="vr_va" [(ngModel)]="formaPagamento">
+        <label for="vr_va">VR e VA</label>
+        <p>Vero Card Refeição e Alimentação, BEN Refeição ou BEN Alimentação, Alelo Refeição, Ticket Restaurante ou Ticket Alimentação, Sodexo Refeição e Alimentação, VR Refeição e Alimentação</p>
+      </div>
     </div>
 
-    <!-- Campos específicos para VR/VA -->
-    <div class="form-group" *ngIf="formaPagamento === 'vr_va'">
-      <label for="vr-va-number">Número do Vale:</label>
-      <input type="text" id="vr-va-number">
+    <div *ngIf="formaPagamento === 'card'">
+      <div class="form-group montserrat-regular">
+        <label for="card-number">Número do Cartão:</label>
+        <input type="text" id="card-number" [(ngModel)]="cardNumber" required>
+      </div>
+      <div *ngIf="!ehValido(cardNumber) && cardNumber.trim() !== ''">
+        <p class="error">Número de cartão de crédito inválido.</p>
+      </div>
+      <div class="form-group">
+        <label for="expiry-date">Data de Validade:</label>
+        <input type="text" id="expiry-date" [(ngModel)]="expiryDate" required>
+      </div>
+      <div *ngIf="!ehValidadeValida(expiryDate) && expiryDate.trim() !== ''">
+        <p class="error">Data de validade inválida.</p>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" [(ngModel)]="cvv" required>
+      </div>
+      <div *ngIf="!ehCvvValido(cvv) && cvv.trim() !== ''">
+        <p class="error">CVV inválido.</p>
+      </div>
+      <div class="form-group">
+        <label for="name-on-card">Nome no Cartão:</label>
+        <input type="text" id="name-on-card" [(ngModel)]="nameOnCard" required>
+      </div>
+      <div *ngIf="nameOnCard.trim() === ''">
+        <p class="error">Nome no cartão não pode estar vazio.</p>
+      </div>
     </div>
 
-    <!-- Botões de ação -->
-    <div class="action-buttons">
-      <button class="btn-primary" (click)="realizarPagamento()">Pagar</button>
-      <button class="btn-secondary">Cancelar</button>
+    <div *ngIf="formaPagamento === 'vr_va'">
+      <div class="form-group">
+        <label for="vr-va-number">Número do Vale:</label>
+        <input type="text" id="vr-va-number">
+      </div>
+    </div>
+
+    <div class="order-summary montserrat-regular">
+      <h3>Resumo do pedido</h3>
+      <p>Valor dos produtos: <strong><span>R$ {{ calcularValorProdutos() | number: '1.2-2' }}</span></strong></p>
+      <p>Frete: <strong>+ R$ 7,00</strong></p>
+      <p>Total: <strong>R$ {{ calcularTotal() | number: '1.2-2' }}</strong></p>
+      <p>Seu pedido será entregue na <strong>Rua Cubatão, 726 - Vila Mariana, São Paulo - SP</strong></p>
+    </div>
+
+    <div class="action-buttons montserrat-regular">
+      <button class="btn-primary montserrat-regular" (click)="realizarPagamento()" [disabled]="!camposPreenchidos()">Finalizar R$ {{ calcularTotal() | number: '1.2-2' }}</button>
+      <button class="btn-secondary montserrat-regular" (click)="cancelar()">Cancelar</button>
     </div>
   </div>
 </div>
