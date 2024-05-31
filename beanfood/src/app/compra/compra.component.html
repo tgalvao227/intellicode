@@ -1,22 +1,27 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="container montserrat-regular" *ngIf="itens">
   <div class="purchase-form">
     <h1>Finalizar Compra</h1>
 
     <div class="product-details">
       <div class="product-image">
-        <img src="assets/carne.jpg" alt="Carne com Legumes Assados">
+        <img [src]="itens.imagem" [alt]="itens.nome">
       </div>
       <div class="product-info">
-        <h2 class="product-title">Carne com Legumes Assados</h2>
-        <p class="product-description">Delicie-se com nossa Carne com Legumes Assados! Uma explosão de sabores em cada garfada. Carne suculenta temperada e legumes frescos caramelizados juntos. Uma mistura perfeita de suculência e crocância. Uma refeição que vai te surpreender!</p>
-        <p class="product-price">R$ 35,00</p>
+        <h2 class="product-title">{{ itens.nome }}</h2>
+        <p class="product-description">Descrição do produto</p>
+        <p class="product-price">{{ itens.preco }}</p>
       </div>
     </div>
 
+    <div *ngIf="pedidoPersonalizado">
+      <!-- <p>Prato personalizado com {{ pedidoPersonalizado.proteina.nome }} e {{ pedidoPersonalizado.acompanhamentos.length }} acompanhamentos.</p>
+      <p>Observação: {{ pedidoPersonalizado.observacao }}</p> -->
+    </div>
+
     <div class="action-buttons">
-      <button type="submit">Comprar</button>
+      <a [routerLink]="['/finalizar-compra']"><button class="btn btn-primary finalizar-compra montserrat-regular" (click)="finalizarCompra()">Finalizar Compra</button></a>
     </div>
   </div>
 </div>
