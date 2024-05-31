@@ -1,10 +1,10 @@
 <app-header></app-header>
 
-<div class="container">
-  <div class="registration-form">
+<div class="container montserrat-regular">
+  <div class="registration-form" [formGroup]="registerForm">
     <h1>Crie sua conta</h1>
     <p>* Campos obrigatórios.</p>
-    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Seu e-mail *</label>
         <input type="email" id="email" formControlName="email" required>
@@ -14,20 +14,7 @@
       <div class="form-group">
         <label for="password">Sua senha *</label>
         <input type="password" id="password" formControlName="password" required>
-        <p *ngIf="registroForm.get('password')?.hasError('minlength') && registroForm.get('password')?.touched" class="text-danger">
-          A senha deve ter pelo menos 8 caracteres.
-        </p>
         <p>Use oito ou mais caracteres com uma combinação de letras, números e símbolos para uma senha mais segura.</p>
-      </div>
-
-      <h2>Qual seu perfil?</h2>
-      <div class="form-group">
-        <label>
-          <input type="radio" formControlName="profile" value="Pessoa Física"> Pessoa Física
-        </label>
-        <label>
-          <input type="radio" formControlName="profile" value="Pessoa Jurídica"> Pessoa Jurídica
-        </label>
       </div>
 
       <div class="form-group">
@@ -68,7 +55,7 @@
 
       <div class="form-group">
         <label for="cep">CEP *</label>
-        <input type="text" id="cep" formControlName="cep" required pattern="\d{5}-\d{3}" appCepMask>
+        <input type="text" id="cep" formControlName="cep" required pattern="\d{5}-\d{3}">
         <a href="#">Não sei meu CEP</a>
       </div>
 
@@ -85,9 +72,7 @@
       </div>
 
       <div class="form-group button-group">
-        <a routerLink="/login">
-        <button type="submit">Salvar cadastro</button>
-        </a>
+        <button type="submit" (click)="onSubmit()">Salvar cadastro</button>
       </div>
     </form>
   </div>
