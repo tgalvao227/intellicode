@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="container montserrat-regular">
   <div class="purchase-form">
     <h2>Finalizar Compra</h2>
     <p>Campos com * são obrigatórios.</p>
@@ -8,7 +8,7 @@
     <!-- Endereço de entrega -->
     <div class="form-group">
       <label for="endereco-entrega">Endereço de entrega *</label>
-      <p>Rua Tuia-do-Oriente, 13 - Vila Nova Parada, São Paulo - SP</p>
+      <p>{{ enderecoEntrega }}</p>
       <!-- Botão para escolher outro endereço -->
       <button class="btn btn-secondary" (click)="mostrarCampoNovoEndereco()">Escolher outro endereço</button>
     </div>
@@ -23,9 +23,25 @@
     <!-- Resumo do pedido -->
     <div class="resumo-pedido">
       <h2>Resumo do Pedido</h2>
+      
+      <!-- Pedido Personalizado -->
+      <div *ngIf="pedidoPersonalizado" class="resumo-item">
+        <h3>Pedido Personalizado</h3>
+        <div class="resumo-pedido-personalizado">
+          <div class="resumo-pedido-linha">
+            <span>Proteína:</span>
+            <span>{{ pedidoPersonalizado.proteina?.nome }} - R$ {{ pedidoPersonalizado.proteina?.preco | number: '1.2-2' }}</span>
+          </div>
+          <div *ngFor="let item of pedidoPersonalizado.acompanhamentos" class="resumo-pedido-linha">
+            <span>Acompanhamento:</span>
+            <span>{{ item.nome }} - R$ {{ item.preco | number: '1.2-2' }}</span>
+          </div>
+        </div>
+      </div>
+
       <div class="resumo-item">
         <span>Valor dos produtos:</span>
-        <span>R$ 35,00</span>
+        <span>R$ {{ calcularTotalPedidoPersonalizado() | number: '1.2-2' }}</span>
       </div>
       <div class="resumo-item">
         <span>Frete:</span>
@@ -33,13 +49,13 @@
       </div>
       <div class="resumo-item total">
         <span>Total:</span>
-        <span>R$ 42,00</span>
+        <span>R$ {{ calcularTotal() | number: '1.2-2' }}</span>
       </div>
     </div>
-
+    
     <!-- Botão de Finalizar Compra -->
     <div class="action-buttons">
-      <button class="btn btn-primary" type="submit">Finalizar Compra</button>
+      <button class="btn btn-primary" (click)="finalizarCompra()">Finalizar Compra</button>
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@ body {
   align-items: center;
   padding: 20px;
   min-height: 100vh;
-  background-color:  #c4c7b6 /* Fundo verde */
+  background-color: #c4c7b6; /* Fundo verde */
 }
 
 .purchase-form {
@@ -54,38 +54,6 @@ body {
   color: #666666;
 }
 
-.primary-button, .btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #859b48; /* Verde */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.primary-button:hover, .btn-primary:hover {
-  background-color: #6c7f39; /* Verde mais escuro */
-}
-
-.secondary-button, .btn-secondary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #6c757d; /* Cinza */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.secondary-button:hover, .btn-secondary:hover {
-  background-color: #5a6268; /* Cinza mais escuro */
-}
-
 .resumo-pedido {
   margin-top: 30px;
 }
@@ -99,6 +67,17 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  color: #666666;
+}
+
+.resumo-pedido-personalizado {
+  margin-bottom: 20px;
+}
+
+.resumo-pedido-linha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
   color: #666666;
 }
 
@@ -123,4 +102,12 @@ body {
 
 .btn:hover {
   background-color: #6c7f39; /* Verde mais escuro */
+}
+
+.btn.btn-secondary {
+  background-color: #6c7f39;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #53622b;
 }
