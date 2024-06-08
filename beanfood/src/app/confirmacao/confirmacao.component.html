@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="confirmation-container montserrat-regular">
+    <div class="confirmation-content">
+      <div *ngIf="status === 'confirmado'" class="confirmation-message confirmed">
+        <i class="fas fa-check-circle"></i> <!-- Ícone de confirmação -->
+        <h2>Obrigado! Seu pedido foi confirmado.</h2>
+        <p>Em breve sairá para entrega.</p>
+      </div>
+  
+      <div *ngIf="status === 'aguardando_pagamento'" class="confirmation-message pending">
+        <i class="fas fa-exclamation-circle"></i> <!-- Ícone de aguardando pagamento -->
+        <h2>Pedido aguardando pagamento.</h2>
+        <p>Por favor, realize o pagamento para confirmar o pedido.</p>
+      </div>
+  
+      <div class="address">
+        <p>Endereço de entrega: Rua Cubatão, 726 - Vila Mariana, São Paulo - SP</p>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

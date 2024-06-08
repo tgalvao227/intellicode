@@ -1,0 +1,38 @@
+/* SCSS do componente ConfirmacaoComponent */
+.confirmation-container {
+    background-color: #c4c7b6; /* Cor de fundo do contêiner de confirmação */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Reduzindo um pouco a altura para 80vh */
+  }
+  
+  .confirmation-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Reduzindo a largura para 70% */
+  }
+  
+  .confirmation-message {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adicionando espaço entre as mensagens e o endereço */
+  }
+  
+  .confirmed {
+    background-color: #859b48; /* Verde */
+    color: #fff;
+  }
+  
+  .pending {
+    background-color: #ffca28; /* Amarelo */
+    color: #333;
+  }
+  
+  .address {
+    text-align: center;
+  }
+  
