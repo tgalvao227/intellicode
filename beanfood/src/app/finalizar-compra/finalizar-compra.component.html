@@ -41,7 +41,7 @@
 
       <div class="resumo-item">
         <span>Valor dos produtos:</span>
-        <span>R$ {{ calcularTotalPedidoPersonalizado() | number: '1.2-2' }}</span>
+        <span >R$ {{ calcularValorProdutos() || calcularTotalPedidoPersonalizado() | number: '1.2-2' }}</span>
       </div>
       <div class="resumo-item">
         <span>Frete:</span>

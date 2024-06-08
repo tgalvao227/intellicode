@@ -39,6 +39,7 @@ export class PagamentoComponent {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.itens = this.carrinhoService.getItensById(id);
+    console.log(this.itens)
   }
 
   calcularValorProdutos(): number {
@@ -54,6 +55,8 @@ export class PagamentoComponent {
   }
 
   realizarPagamento() {
+    this.carrinhoService.limparCarrinho();
+    this.carrinhoService.limparPedidoPersonalizado();
     if (this.formaPagamento === 'card' && this.isDadosCartaoValidos()) {
       this.router.navigate(['/confirmacao'], { queryParams: { status: 'confirmado' } });
     } else {
@@ -100,6 +103,8 @@ export class PagamentoComponent {
   }
 
   cancelar() {
+    this.carrinhoService.limparCarrinho();
+    this.carrinhoService.limparPedidoPersonalizado();
     this.router.navigate(['/']);
   }
 }

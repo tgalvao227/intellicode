@@ -33,6 +33,8 @@ export class FinalizarCompraComponent {
         this.carrinho = this.carrinhoService.getCarrinho();
         this.pedidoPersonalizado = this.carrinhoService.getPedidoPersonalizado();
         console.log(this.pedidoPersonalizado);
+        this.calcularTotal;
+        this.calcularTotalPedidoPersonalizado
         console.log('Total do pedido personalizado:', this.calcularTotalPedidoPersonalizado());
     }
 
@@ -75,8 +77,6 @@ export class FinalizarCompraComponent {
       console.log('Compra finalizada. Total: R$', this.calcularTotal());
       console.log('Endereço de entrega:', this.enderecoEntregaFormControl.value);
       console.log('Forma de pagamento:', this.formaPagamento);
-      this.carrinhoService.limparCarrinho();
-      this.carrinhoService.limparPedidoPersonalizado();
       this.router.navigate(['/pagamento']);
     }
 
