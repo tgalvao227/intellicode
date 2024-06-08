@@ -63,15 +63,15 @@
     margin-left: 5px; /* Ajuste conforme necessário */
     padding: 0; /* Remova o preenchimento do botão */
     background: transparent; /* Remova o fundo do botão */
-    border: none; /* Remova a borda */
-    cursor: pointer; /* Altere o cursor para indicar que é clicável */
+    border: none; 
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
     display: flex; /* Para alinhar a imagem dentro do botão */
   
     img {
-      width: 30px; /* Defina a largura da imagem conforme necessário */
-      height: 30px; /* Defina a altura da imagem conforme necessário */
-      border: none; /* Remova a borda da imagem */
-      outline: none; /* Remova a borda de foco da imagem */
+      width: 30px; 
+      height: 30px;
+      border: none; 
+      outline: none;
     }
   }
   
@@ -110,12 +110,12 @@
   }
   
   .btn-login {
-    margin-left: 5px; /* Ajuste conforme necessário */
+    margin-left: 5px; 
     background-color: #859b48; /* Cor do botão */
     color: #fff; /* Cor do texto */
     border: none; /* Remova a borda */
-    padding: 5px 10px; /* Ajuste o preenchimento conforme necessário */
-    cursor: pointer; /* Altere o cursor para indicar que é clicável */
+    padding: 5px 10px; 
+    cursor: pointer; 
   }
   
   .btn-login:hover {
