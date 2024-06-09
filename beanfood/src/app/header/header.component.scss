@@ -129,4 +129,29 @@
     color: #333; /* Cor do texto */
   }
   
-  
+  @media only screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .cart {
+        margin-top: 20px;
+    }
+}

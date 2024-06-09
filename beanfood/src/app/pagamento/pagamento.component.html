@@ -28,23 +28,23 @@
     </div>
 
     <div *ngIf="formaPagamento === 'card'">
-      <div class="form-group montserrat-regular">
+      <div class="form-group">
         <label for="card-number">Número do Cartão:</label>
-        <input type="text" id="card-number" [(ngModel)]="cardNumber" required>
+        <input type="text" id="card-number" [(ngModel)]="cardNumber" required mask="0000 0000 0000 0000">
       </div>
       <div *ngIf="!ehValido(cardNumber) && cardNumber.trim() !== ''">
         <p class="error">Número de cartão de crédito inválido.</p>
       </div>
       <div class="form-group">
         <label for="expiry-date">Data de Validade:</label>
-        <input type="text" id="expiry-date" [(ngModel)]="expiryDate" required>
+        <input type="text" id="expiry-date" [(ngModel)]="expiryDate" required mask="00/00">
       </div>
       <div *ngIf="!ehValidadeValida(expiryDate) && expiryDate.trim() !== ''">
         <p class="error">Data de validade inválida.</p>
       </div>
       <div class="form-group">
         <label for="cvv">CVV:</label>
-        <input type="text" id="cvv" [(ngModel)]="cvv" required>
+        <input type="text" id="cvv" [(ngModel)]="cvv" required mask="000">
       </div>
       <div *ngIf="!ehCvvValido(cvv) && cvv.trim() !== ''">
         <p class="error">CVV inválido.</p>
@@ -61,7 +61,10 @@
     <div *ngIf="formaPagamento === 'vr_va'">
       <div class="form-group">
         <label for="vr-va-number">Número do Vale:</label>
-        <input type="text" id="vr-va-number">
+        <input type="text" id="vr-va-number" required mask="0000 0000 0000 0000">
+      </div>
+      <div *ngIf="!ehValidoVR(cardNumber) && cardNumber.trim() !== ''">
+        <p class="error">Número de cartão inválido.</p>
       </div>
     </div>
 

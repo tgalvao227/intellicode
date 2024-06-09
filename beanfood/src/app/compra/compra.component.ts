@@ -5,8 +5,8 @@ import { FooterComponent } from "../footer/footer.component";
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Itens } from '../home/home.component';
-import { CarrinhoService, Item, PedidoPersonalizado } from '../carrinho/carrinho.service';
-import { CompraService } from '../compra/compra.service'; // Importe o novo serviço
+import { CarrinhoService, PedidoPersonalizado } from '../carrinho/carrinho.service';
+import { CompraService } from '../compra/compra.service';
 
 @Component({
     selector: 'app-compra',

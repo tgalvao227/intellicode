@@ -7,15 +7,15 @@ import { CarrinhoService } from '../carrinho/carrinho.service';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ehValido } from '../validador-credito/validador-credito.component';
-import { RouterLink } from '@angular/router';
 import { CompraService } from '../compra/compra.service';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @Component({
   selector: 'app-pagamento',
   standalone: true,
   templateUrl: './pagamento.component.html',
   styleUrls: ['./pagamento.component.scss'],
-  imports: [CommonModule, FormsModule, HeaderComponent, FooterComponent]
+  imports: [CommonModule, FormsModule, HeaderComponent, FooterComponent, NgxMaskDirective, NgxMaskPipe]
 })
 export class PagamentoComponent {
   itens: Itens | undefined;
@@ -24,6 +24,7 @@ export class PagamentoComponent {
   expiryDate: string = '';
   cvv: string = '';
   nameOnCard: string = '';
+
 
   constructor(
     private router: Router,
@@ -72,6 +73,10 @@ export class PagamentoComponent {
   }
 
   ehValido(cardNumber: string): boolean {
+    return ehValido(cardNumber);
+  }
+
+  ehValidoVR(cardNumber: string): boolean {
     return ehValido(cardNumber);
   }
 
