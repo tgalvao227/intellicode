@@ -1,157 +1,159 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #ece5df; /* Fundo do site */
-  }
-  
-  /* Header */
-  header {
-    background-color: #ece5df;
-    padding: 20px 0;
-  }
-  
+@media only screen and (max-width: 768px) {
+  /* Estilos para telas menores, como dispositivos móveis */
   .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+      flex-direction: column; /* Altera a direção do flex container */
+      align-items: center; /* Centraliza os itens */
   }
-  
+
   .logo img {
-    height: 50px;
+      height: 40px; /* Ajusta o tamanho do logo para dispositivos móveis */
   }
-  
+
   nav ul {
-    display: flex;
+      flex-direction: column; /* Altera a direção da lista para uma coluna */
+      text-align: center; /* Centraliza os itens */
   }
-  
+
   nav ul li {
-    list-style-type: none;
-    margin-right: 20px;
+      margin: 10px 0; /* Espaçamento entre os itens da lista */
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .user-icon img,
-  .cart img {
-    height: 30px;
-    margin-right: 5px;
-  }
-  
-  .user-icon {
-    margin-right: 5px; // Reduzindo o espaço entre o ícone do usuário e o carrinho
-  }
-  
-  
+
   .cart {
-    display: flex; /* Adiciona display flex para alinhar os elementos internamente */
-    align-items: center; /* Alinha os itens verticalmente */
-    position: relative; /* Define a posição relativa para o elemento pai */
+      margin-top: 10px; /* Espaçamento superior entre o menu e o carrinho */
   }
-  
+
   .btn-login {
-    margin-left: 5px; /* Ajuste conforme necessário */
-    padding: 0; /* Remova o preenchimento do botão */
-    background: transparent; /* Remova o fundo do botão */
+      margin-left: 0; /* Remove a margem à esquerda */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece5df; /* Fundo do site */
+}
+
+/* Header */
+header {
+  background-color: #ece5df;
+  padding: 20px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.user-icon img,
+.cart img {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.user-icon {
+  margin-right: 5px; // Reduzindo o espaço entre o ícone do usuário e o carrinho
+}
+
+
+.cart {
+  display: flex; /* Adiciona display flex para alinhar os elementos internamente */
+  align-items: center; /* Alinha os itens verticalmente */
+  position: relative; /* Define a posição relativa para o elemento pai */
+}
+
+.btn-login {
+  margin-left: 5px; /* Ajuste conforme necessário */
+  padding: 0; /* Remova o preenchimento do botão */
+  background: transparent; /* Remova o fundo do botão */
+  border: none; 
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+  display: flex; /* Para alinhar a imagem dentro do botão */
+
+  img {
+    width: 30px; 
+    height: 30px;
     border: none; 
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
-    display: flex; /* Para alinhar a imagem dentro do botão */
-  
-    img {
-      width: 30px; 
-      height: 30px;
-      border: none; 
-      outline: none;
-    }
+    outline: none;
   }
-  
-  
-  
-  /* Banner */
-  .banner {
-    background-size: cover;
-    background-position: center;
-    color: black;
-    text-align: center;
-    padding: 100px 0;
-  }
-  
-  .banner h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .banner p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  .banner button {
-    padding: 10px 20px;
-    background-color: #859b48; /* Cor dos botões */
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .banner button:hover {
-    background-color: #6c7f39; /* Cor dos botões ao passar o mouse */
-  }
-  
-  .btn-login {
-    margin-left: 5px; 
-    background-color: #859b48; /* Cor do botão */
-    color: #fff; /* Cor do texto */
-    border: none; /* Remova a borda */
-    padding: 5px 10px; 
-    cursor: pointer; 
-  }
-  
-  .btn-login:hover {
-    background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
-  }
-  
-  .section-intro {
-    text-align: center; /* Centralizar o texto */
-    margin-bottom: 30px; /* Espaçamento inferior */
-    font-size: 24px; /* Tamanho do texto */
-    color: #333; /* Cor do texto */
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
+}
 
-    .logo {
-        margin-bottom: 20px;
-    }
 
-    nav {
-        text-align: center;
-    }
 
-    nav ul {
-        flex-direction: column;
-    }
+/* Banner */
+.banner {
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+  padding: 100px 0;
+}
 
-    nav ul li {
-        margin-bottom: 10px;
-    }
+.banner h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
-    .cart {
-        margin-top: 20px;
-    }
+.banner p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  background-color: #859b48; /* Cor dos botões */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.banner button:hover {
+  background-color: #6c7f39; /* Cor dos botões ao passar o mouse */
+}
+
+.btn-login {
+  margin-left: 5px; 
+  background-color: #859b48; /* Cor do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remova a borda */
+  padding: 5px 10px; 
+  cursor: pointer; 
+}
+
+.btn-login:hover {
+  background-color: #6c7f39; /* Cor de fundo ao passar o mouse */
+}
+
+.section-intro {
+  text-align: center; /* Centralizar o texto */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  font-size: 24px; /* Tamanho do texto */
+  color: #333; /* Cor do texto */
 }

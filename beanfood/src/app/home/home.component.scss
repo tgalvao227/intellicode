@@ -268,7 +268,7 @@ body {
 .promocao-card {
   flex: 0 0 auto;
   background-color: #fff;
-  padding: 20px;
+  padding: 3%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px; /* Espaçamento inferior entre os cards */
@@ -314,7 +314,7 @@ body {
 
 /* Estilos para a Seção de Kits */
 .kits {
-  padding: 50px 0; /* Espaçamento interno */
+  padding: 3% 0; /* Espaçamento interno */
   background-color: #ece5df; /* Cor de fundo */
 }
 
@@ -403,6 +403,57 @@ body {
   background-color: #ece5df; /* Fundo do site */
 }
 
+@media only screen and (max-width: 768px) {
+  /* Estilos para telas menores, como dispositivos móveis */
+  .header-container {
+      flex-direction: column; /* Altera a direção do flex container */
+      align-items: center; /* Centraliza os itens */
+  }
+
+  .logo img {
+      height: 40px; /* Ajusta o tamanho do logo para dispositivos móveis */
+  }
+
+  .kit-card {
+    flex: 0 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+    text-align: center;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+  }
+
+  nav ul {
+      flex-direction: column; /* Altera a direção da lista para uma coluna */
+      text-align: center; /* Centraliza os itens */
+  }
+
+  nav ul li {
+      margin: 10px 0; /* Espaçamento entre os itens da lista */
+  }
+
+  .cart {
+      margin-top: 10px; /* Espaçamento superior entre o menu e o carrinho */
+  }
+
+  .btn-login {
+      margin-left: 0; /* Remove a margem à esquerda */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece5df; /* Fundo do site */
+}
+
 /* Header */
 header {
   background-color: #ece5df;
@@ -413,7 +464,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -457,15 +508,15 @@ nav ul li a {
   margin-left: 5px; /* Ajuste conforme necessário */
   padding: 0; /* Remova o preenchimento do botão */
   background: transparent; /* Remova o fundo do botão */
-  border: none; /* Remova a borda */
-  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  border: none; 
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
   display: flex; /* Para alinhar a imagem dentro do botão */
 
   img {
-    width: 30px; /* Defina a largura da imagem conforme necessário */
-    height: 30px; /* Defina a altura da imagem conforme necessário */
-    border: none; /* Remova a borda da imagem */
-    outline: none; /* Remova a borda de foco da imagem */
+    width: 30px; 
+    height: 30px;
+    border: none; 
+    outline: none;
   }
 }
 
@@ -504,12 +555,12 @@ nav ul li a {
 }
 
 .btn-login {
-  margin-left: 5px; /* Ajuste conforme necessário */
+  margin-left: 5px; 
   background-color: #859b48; /* Cor do botão */
   color: #fff; /* Cor do texto */
   border: none; /* Remova a borda */
-  padding: 5px 10px; /* Ajuste o preenchimento conforme necessário */
-  cursor: pointer; /* Altere o cursor para indicar que é clicável */
+  padding: 5px 10px; 
+  cursor: pointer; 
 }
 
 .btn-login:hover {
@@ -522,7 +573,3 @@ nav ul li a {
   font-size: 24px; /* Tamanho do texto */
   color: #333; /* Cor do texto */
 }
-
-
-
-
