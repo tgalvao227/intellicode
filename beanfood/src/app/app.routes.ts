@@ -6,7 +6,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PedidoPersonalizadoComponent } from './pedido-personalizado/pedido-personalizado.component';
-import { ConfirmacaoComponent } from './confirmacao/confirmacao.component';
+// import { ConfirmacaoComponent } from './confirmacao/confirmacao.component';
 import { RegistroComponent } from './registro/registro.component';
 
 export const routes: Routes = [
@@ -18,5 +18,5 @@ export const routes: Routes = [
     { path: 'sobre', component: SobreComponent },
     { path: 'pagamento', component: PagamentoComponent},
     { path: 'pedido-personalizado', component: PedidoPersonalizadoComponent },
-    { path: 'confirmacao', component: ConfirmacaoComponent }
+    // { path: 'confirmacao', component: ConfirmacaoComponent }
   ];

@@ -1,0 +1,16 @@
+{
+    "/api": {
+      "target": "http://localhost:8080",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      } 
+    },
+    "/cep": {
+      "target": "http://viacep.com.br",
+      "secure": false,
+      "pathRewrite": {
+        "^/cep": ""
+      } 
+    }
+  }
