@@ -12,12 +12,19 @@
         <li><a routerLink="/sobre">Sobre Nós</a></li>
       </ul>
     </nav>
-    <div class="cart">
+
+    <div class="cart" *ngIf="!userData">
       <a routerLink="/login">
         <button class="btn btn-login montserrat-regular">
           Login
         </button>
       </a>
+    </div>
+
+    <div *ngIf="userData">
+      <span>
+        <i class="fas fa-user-circle"></i> {{ userData.nome }} {{ userData.sobrenome }}
+      </span>
     </div>
   </div>
 </header>

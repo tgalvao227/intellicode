@@ -30,6 +30,7 @@ export interface Itens{
 })
 
 export class HomeComponent implements OnInit {
+  userData: any;
   isMarmitas: boolean = true;
   sectionTitle: string = 'Delícias prontas para o seu dia a dia'; 
   testimonials: Testimonial[] = [
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
     { nome: 'Salada com grãos', imagem: 'assets/pratosalada.jpg', preco: 'R$ 22,00', quantidade: 1, id: 8 },
     { nome: 'Feijoada vegana', imagem: 'assets/feijoada.jpg', preco: 'R$ 30,00', quantidade: 1, id: 9},
   ];
+  
 
   toggleSection() {
     this.isMarmitas = !this.isMarmitas;
@@ -59,12 +61,27 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.userData = this.getUserData();
+
     setInterval(() => {
       this.toggleSection();
     }, 10000); // Alterna as seções a cada 10 segundos
     setInterval(() => {
       this.showNextTestimonial();
     }, 5000); // Alterna os depoimentos a cada 5 segundos
+  }
+
+  getUserData() {
+    // Primeiro, obtenha a string JSON armazenada em 'data'
+    const dataString = localStorage.getItem('data');
+    
+    // Parseie a string JSON para um objeto
+    const dataObj = dataString ? JSON.parse(dataString) : null;
+
+    console.log(dataObj);
+    
+    return dataObj
   }
 
   showNextTestimonial(): void {

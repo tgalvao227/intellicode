@@ -13,6 +13,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
     { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'compra/:id', component: CompraComponent },
     { path: 'finalizar-compra', component: FinalizarCompraComponent },
     { path: 'sobre', component: SobreComponent },

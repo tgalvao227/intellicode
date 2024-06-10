@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // import { LoginService } from './login.service';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,11 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  banner: string = '';
 
   constructor(
     private fb: FormBuilder,
+    private http: HttpClient,
     // private loginService: LoginService,
     private router: Router
   ) {
@@ -35,20 +38,19 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
+      const payload = {
+         email: this.loginForm.get('email')?.value,
+         senha: this.loginForm.get('password')?.value
+      }
 
-  //     this.loginService.login(credentials).subscribe(
-  //       response => {
-  //         if (response) {
-  //           console.log('Login bem-sucedido:', response);
-  //           // this.router.navigate(['/']); 
-  //         } else {
-  //           console.error('Credenciais inválidas');
-  //         }
-  //       },
-  //       error => {
-  //         console.error('Erro no login:', error);
-  //       }
-  //     );
-     }
+      this.http.post('api/login', payload).subscribe((data: any) => {
+        console.log(data);
+        localStorage.setItem('data', JSON.stringify(data));
+        this.router.navigate(['home']);
+      }, (error) => {
+        console.error(error);
+        this.banner = error.error;
+      });
+    }
    }
 }

@@ -12,10 +12,10 @@
           <li><a routerLink="/sobre">Sobre Nós</a></li>
         </ul>
       </nav>
-      <div class="cart">
+      <div class="cart" ng-if="userData == null">
         <a routerLink="/login">
           <button class="btn btn-login montserrat-regular">
-            Login
+            {{userData | json}}
           </button>
         </a>
       </div>

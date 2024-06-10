@@ -21,6 +21,8 @@
                 <input type="password" id="password" formControlName="password">
             </div>
             <button type="submit" class="btn btn-login" [disabled]="loginForm.invalid">Entrar</button>
+
+            <p style="color: red" ng-if="banner">{{ banner }}</p>
         </form>
     </div>
 </div>
